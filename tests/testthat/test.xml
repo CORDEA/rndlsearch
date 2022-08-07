@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcndl="http://ndl.go.jp/dcndl/terms/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <channel>
+        <item>
+        </item>
+        <item>
+            <title>Title</title>
+            <link>Link</link>
+            <description>Description</description>
+            <author>Author</author>
+            <pubDate>PubDate</pubDate>
+            <category>Category</category>
+            <guid>GUID</guid>
+            <dc:date>Date</dc:date>
+            <dc:creator>Creator</dc:creator>
+            <dc:subject>Subject</dc:subject>
+            <dcndl:volume>Volume</dcndl:volume>
+            <dcndl:edition>Edition</dcndl:edition>
+            <dcndl:seriesTitle>SeriesTitle</dcndl:seriesTitle>
+            <dc:publisher>Publisher</dc:publisher>
+            <dcterms:issued>Issued</dcterms:issued>
+        </item>
+        <item>
+            <title>Title</title>
+            <link>Link</link>
+            <description>Description1</description>
+            <author>Author</author>
+            <category>Category</category>
+            <guid>GUID</guid>
+            <dc:creator>Creator1</dc:creator>
+            <dc:creator>Creator2</dc:creator>
+            <dc:publisher>Publisher1</dc:publisher>
+            <dc:publisher>Publisher2</dc:publisher>
+            <dc:subject>Subject1</dc:subject>
+            <dc:subject>Subject2</dc:subject>
+            <dcndl:price>Price</dcndl:price>
+            <dc:extent>Extent1</dc:extent>
+            <dc:extent>Extent2</dc:extent>
+            <dc:identifier xsi:type="dcndl:AAAA">AAAA</dc:identifier>
+            <dc:identifier xsi:type="dcndl:ISBN">ISBN</dc:identifier>
+            <dc:description>Description2</dc:description>
+            <rdfs:seeAlso rdf:resource="Reference1" />
+            <rdfs:seeAlso rdf:resource="Reference2" />
+            <rdfs:seeAlso rdf:resource="Reference3" />
+        </item>
+    </channel>
+</rss>
