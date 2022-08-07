@@ -1,3 +1,56 @@
+test_that("build query", {
+  mockery::stub(rndlsearch, "request", function(query) {
+    expect_equal(length(query), 7)
+    expect_equal(query$cnt, 2)
+    expect_equal(query$title, "title")
+    expect_equal(query$description, "description")
+    expect_equal(query$creator, "creator")
+    expect_equal(query$publisher, "publisher")
+    expect_equal(query$from, "from")
+    expect_equal(query$until, "until")
+    list()
+  })
+
+  rndlsearch(
+    count = 2,
+    title = "title",
+    description = "description",
+    creator = "creator",
+    publisher = "publisher",
+    from = "from",
+    until = "until"
+  )
+})
+
+test_that("build query", {
+  mockery::stub(rndlsearch, "request", function(query) {
+    expect_equal(length(query), 3)
+    expect_equal(query$cnt, 2)
+    expect_equal(query$foo, "foo")
+    expect_equal(query$bar, "bar")
+    list()
+  })
+
+  rndlsearch(
+    count = 2,
+    foo = "foo",
+    bar = "bar"
+  )
+})
+
+test_that("build query", {
+  mockery::stub(rndlsearch, "request", function(query) {
+    expect_equal(length(query), 1)
+    expect_equal(query$cnt, 2)
+    list()
+  })
+
+  rndlsearch(
+    count = 2,
+    cnt = 3
+  )
+})
+
 test_that("parse response", {
   xml <- xml2::read_xml("test.xml")
   parsed <- parse_response(xml)

@@ -1,8 +1,26 @@
 #' @export
-rndlsearch <- function(...) {
+rndlsearch <- function(count = NULL,
+                       title = NULL, description = NULL,
+                       creator = NULL, publisher = NULL,
+                       from = NULL, until = NULL,
+                       ...) {
+  query <- c(list(
+    "cnt" = count,
+    "title" = title,
+    "description" = description,
+    "creator" = creator,
+    "publisher" = publisher,
+    "from" = from,
+    "until" = until
+  ), list(...))
+  query <- Filter(function (e) { !is.null(e) }, query)
+  request(query[!duplicated(names(query))])
+}
+
+request <- function(query) {
   response <- httr::GET(
     url = "https://iss.ndl.go.jp/api/opensearch",
-    query = list(...)
+    query = query
   )
   xml <- xml2::read_xml(response)
   parse_response(xml)
