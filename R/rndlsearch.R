@@ -14,7 +14,7 @@ parse_response <- function(response) {
 }
 
 flatten_item <- function(item) {
-  list(
+  l <- list(
     item$title[[1]],
     item$link[[1]],
     item$description[[1]],
@@ -31,4 +31,20 @@ flatten_item <- function(item) {
       attributes(e)$resource
     }))
   )
+  names(l) <- c(
+    "Title",
+    "Link",
+    "Description",
+    "Author",
+    "Category",
+    "GUID",
+    "Publish Date",
+    "Creators",
+    "Volume",
+    "Edition",
+    "Publisher",
+    "Date",
+    "Resources"
+  )
+  l
 }
