@@ -14,6 +14,7 @@ parse_response <- function(response) {
 }
 
 flatten_item <- function(item) {
+  ids = item[names(item)=="identifier"]
   l <- list(
     item$title[[1]],
     item$link[[1]],
@@ -21,6 +22,7 @@ flatten_item <- function(item) {
     item$author[[1]],
     item$category[[1]],
     item$guid[[1]],
+    extract_id(ids, "ISBN"),
     item$pubDate[[1]],
     unname(unlist(item[names(item)=="creator"], recursive=FALSE)),
     item$volume[[1]],
@@ -38,6 +40,7 @@ flatten_item <- function(item) {
     "Author",
     "Category",
     "GUID",
+    "ISBN",
     "Publish Date",
     "Creators",
     "Volume",
@@ -47,4 +50,16 @@ flatten_item <- function(item) {
     "Resources"
   )
   l
+}
+
+extract_id <- function(ids, type) {
+  r <- Filter(
+    function (e) { attr(e, "type") == paste0("dcndl:", type) },
+    ids
+  )
+  if (length(r) == 0) {
+    NULL
+  } else {
+    r[[1]][[1]]
+  }
 }
