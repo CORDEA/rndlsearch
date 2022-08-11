@@ -69,24 +69,24 @@ flatten_item <- function(item) {
     }))
   )
   names(l) <- c(
-    "Title",
-    "Link",
-    "Descriptions",
-    "Subjects",
-    "Author",
-    "Category",
-    "GUID",
-    "ISBN",
-    "Publish Date",
-    "Issued Date",
-    "Date",
-    "Creators",
-    "Volume",
-    "Edition",
-    "Series Title",
-    "Extents",
-    "Publishers",
-    "Resources"
+    "title",
+    "link",
+    "descriptions",
+    "subjects",
+    "author",
+    "category",
+    "guid",
+    "isbn",
+    "publishDate",
+    "issuedDate",
+    "date",
+    "creators",
+    "volume",
+    "edition",
+    "seriesTitle",
+    "extents",
+    "publishers",
+    "resources"
   )
   l
 }
