@@ -12,7 +12,7 @@ test_that("build query", {
   })
 
   rndlsearch(
-    count = 2,
+    limit = 2,
     title = "title",
     description = "description",
     creator = "creator",
@@ -32,7 +32,7 @@ test_that("build query", {
   })
 
   rndlsearch(
-    count = 2,
+    limit = 2,
     foo = "foo",
     bar = "bar"
   )
@@ -46,7 +46,7 @@ test_that("build query", {
   })
 
   rndlsearch(
-    count = 2,
+    limit = 2,
     cnt = 3
   )
 })

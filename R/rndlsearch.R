@@ -1,11 +1,24 @@
+#' Query the Search API of National Diet Library.
+#'
+#' @param limit Number of results. It will be sent as `cnt`.
+#' @param title Title.
+#' @param description Description.
+#' @param creator Creator.
+#' @param publisher Publisher.
+#' @param from Results after `from` specified in `yyyy`.
+#' @param until Results before `until` specified in `yyyy`.
+#' @param ... Extra parameters. First parameters are preferred if overridden.
+#'
+#' @return Results. Returns as named `list`.
+#'
 #' @export
-rndlsearch <- function(count = NULL,
+rndlsearch <- function(limit = NULL,
                        title = NULL, description = NULL,
                        creator = NULL, publisher = NULL,
                        from = NULL, until = NULL,
                        ...) {
   query <- c(list(
-    "cnt" = count,
+    "cnt" = limit,
     "title" = title,
     "description" = description,
     "creator" = creator,
